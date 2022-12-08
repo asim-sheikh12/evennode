@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 app.use(cors("*"));
 const port = 3000;
-
+app.get("/", (req, res) => res.status(200).json({ message: "Success" }));
 app.get("/user", async (req, res) => {
   try {
     const response = await axios.get(
